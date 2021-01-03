@@ -1,38 +1,356 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Permanent+Marker&display=swap');
+@import url("https://use.typekit.net/scw4nxb.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    /*font-family: 'Permanent Marker', cursive;*/
+    /*font-family: acumin-pro, sans-serif;*/
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    margin: 48px auto 0 auto;
+    padding: 20px 0;
+    max-width: 1320px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+    background-color: #E1E2E1;
+    min-height: calc(100vh - 48px);
+    color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.scream {
+    display: flex;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: #F5F5F6;
+    transition: 0.3s;
+    max-height: 250px;
+    max-width: 900px;
+    border-top-left-radius: 125px;
+    border-bottom-left-radius: 125px;
 }
 
-.App-link {
-  color: #61dafb;
+.scream:hover {
+    box-shadow:  0 0 10px 1px #FFEBEE;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scream__image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
 }
+
+.scream__wrapper {
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    height: 100%;
+}
+
+.scream__info {
+    overflow: auto;
+}
+
+.scream__info-item {
+    width: 100%;
+}
+
+.scream__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.scream__actions {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    align-items: center;
+    padding-right: 20px;
+    border-top-left-radius: 5px;
+}
+
+.scream__actions-box {
+    display: flex;
+    align-items: center;
+}
+
+.scream__like-link {
+    height: 24px;
+}
+
+.scream__info-item-box {
+    display: flex;
+    margin-top: 3px;
+}
+
+.scream__info-item-box-item {
+    margin-left: 15px;
+}
+
+.scream__user {
+    display: block;
+    font-size: 15px;
+    color: black;
+    letter-spacing: 5px;
+    text-decoration: none;
+}
+
+.scream__user:hover {
+    text-decoration: underline;
+}
+
+.scream__created {
+    color: black;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.scream__body {
+    color: black;
+    font-size: 20px;
+    word-break: break-word;
+}
+
+.signup__form,
+.login__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup__form-input:not(:last-child),
+.login__form-input:not(:last-child) {
+    margin-bottom: 20px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.signup__title,
+.login__title {
+    text-align: center;
+}
+
+.signup__form-signup-link,
+.login__form-signup-link {
+    color: black;
+    text-align: center;
+}
+
+.posts__list {
+    margin-right: 30px;
+}
+
+.profile__wrapper {
+    position: fixed;
+    right: 20px;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F5F6;
+    border-radius: 10px;
+    max-width: 440px;
+    max-height: 89vh;
+    height: 100%;
+    overflow: auto;
+}
+
+.profile__avatar-wrapper:hover .profile__edit-picture-btn {
+    display: block;
+}
+
+.profile__edit-picture-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
+.profile__avatar-wrapper {
+    position: relative;
+}
+
+.profile__avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    max-height: 440px;
+}
+
+.profile__handle:hover {
+    text-decoration: underline;
+}
+
+.profile__info-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.profile__info-item-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.profile__info-item {
+    font-size: 16px;
+    word-break: break-word;
+    line-height: 170%;
+    letter-spacing: 1px;
+}
+
+.profile__handle {
+    font-size: 20px;
+    color: black;
+    letter-spacing: 5px;
+    text-decoration: none;
+}
+
+.profile__info-item:not(:first-child) {
+    margin-left: 10px;
+}
+
+.profile__unauth {
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.profile__unauth-link {
+    color: #ccb9bc;
+}
+
+.profile__edit-details-btn {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+.login__form-signup-link--color,
+.signup__form-signup-link--color {
+    color: #ccb9bc;
+}
+
+.scream-dialog__img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.scream-dialog__hr {
+    margin: 10px 0;
+}
+
+.scream-dialog__body {
+    word-break: break-all;
+}
+
+.scream-dialog {
+    display: flex;
+}
+
+.scream-dialog__box {
+    margin: 0 20px;
+}
+
+.scream-dialog__user-handle {
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.scream-dialog__user-handle:hover {
+    text-decoration: underline;
+}
+
+.scream-dialog__body {
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 180%;
+    letter-spacing: 1px;
+    word-break: break-word;
+}
+
+.scream-dialog__circular-progress-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+.scream-comment__wrapper {
+    display: flex;
+    margin: 10px 0;
+    background-color: #ffebee;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.scream-comment__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.scream-comment__user {
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.scream-comment__user:hover {
+    text-decoration: underline;
+}
+
+.scream-comment__time {
+    font-size: 12px;
+    font-style: italic;
+    margin: 5px 0 0 10px;
+}
+
+.scream-comment__body {
+    font-size: 15px;
+    margin-top: 5px;
+    word-break: break-word;
+}
+
+.scream-comment__box {
+    margin-left: 5px;
+}
+
+.scream-comment__box-header {
+    display: flex;
+    align-items: center;
+}
+
+.post-comment__form {
+    display: flex;
+    align-items: center;
+}
+
+.notifications__link {
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+}
+
+.notifications__link:hover {
+    text-decoration: underline;
+}
+
