@@ -42,7 +42,8 @@
 }
 
 .scream__image {
-    width: 250px;
+    max-width: 250px;
+    width: 100%;
     height: 250px;
     border-radius: 50%;
     position: relative;
