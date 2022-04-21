@@ -1,4 +1,4 @@
-## Security Checklist
+## Security Checklist :pray:
 
 - [ ] Authorization has been implemented across these changes
 - [ ] Injection has been prevented (parameterized queries, no eval or system calls)
